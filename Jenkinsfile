@@ -28,6 +28,7 @@ pipeline {
                 // sh 'npm run start'
                 sh 'pm2 start npm --name "next-js" -- start'
                 sh 'pm2 show next-js'
+                sh 'pm2 status next-js'
             }
         }
     }

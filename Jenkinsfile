@@ -9,7 +9,6 @@ pipeline {
         stage('Preparation'){
             steps {
                 sh 'npm install --global pm2'
-                sh 'pm2 stop all'
                 sh 'npm install'
                 sh 'npm run lint'
             }

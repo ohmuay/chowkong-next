@@ -6,10 +6,6 @@ pipeline {
 
     stages {
 
-        environment{
-            NODE_ENV=production
-        }
-
         stage('Preparation'){
             steps {
                 sh 'npm install --production'

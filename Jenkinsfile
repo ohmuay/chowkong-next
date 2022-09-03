@@ -6,11 +6,11 @@ pipeline {
                 sh 'npm build'
             }
         }
-        stage('Test') { 
-            steps {
-                // 
-            }
-        }
+        // stage('Test') { 
+        //     steps {
+        //         // 
+        //     }
+        // }
         stage('Deploy') { 
             steps {
                 sh 'npm start'

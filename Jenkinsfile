@@ -6,16 +6,20 @@ pipeline {
 
     stages {
 
+        environment{
+            NODE_ENV=production
+        }
+
         stage('Preparation'){
             steps {
-                sh 'npm install'
+                sh 'npm install --production'
                 sh 'npm run lint'
             }
         }
 
         stage('Build') { 
             steps {
-                sh 'npm run build'
+                sh 'NODE_ENV=production npm run build'
             }
         }
         // stage('Test') { 

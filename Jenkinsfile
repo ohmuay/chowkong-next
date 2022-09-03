@@ -8,6 +8,8 @@ pipeline {
 
         stage('Preparation'){
             steps {
+                sh 'npm install --global pm2'
+                sh 'pm2 stop all'
                 sh 'npm install'
                 sh 'npm run lint'
             }
@@ -25,7 +27,8 @@ pipeline {
         // }
         stage('Deploy') { 
             steps {
-                sh 'npm run start'
+                sh 'pm2 start yarn --name "nextjs" --interpreter bash -- start'
+                sh 'pm2 show nextjs'
             }
         }
     }

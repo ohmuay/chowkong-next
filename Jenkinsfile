@@ -1,13 +1,13 @@
 pipeline {
     agent any
-    
+
     // tools {nodejs "Your Node JS Installation Name"}
     tools {nodejs "nodejs"}
 
     stages {
         stage('Build') { 
             steps {
-                sh 'npm build'
+                sh 'npm run build'
             }
         }
         // stage('Test') { 
@@ -17,7 +17,7 @@ pipeline {
         // }
         stage('Deploy') { 
             steps {
-                sh 'npm start'
+                sh 'npm run start'
             }
         }
     }

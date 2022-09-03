@@ -25,8 +25,9 @@ pipeline {
         // }
         stage('Deploy') { 
             steps {
-                sh 'pm2 start npm --name "nextjs" --interpreter node -- start'
-                sh 'pm2 show nextjs'
+                sh 'npm run start'
+                // sh 'pm2 start npm --name "nextjs" --interpreter node -- start'
+                // sh 'pm2 show nextjs'
             }
         }
     }

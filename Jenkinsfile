@@ -1,5 +1,9 @@
 pipeline {
-    agent any 
+    agent any
+    
+    // tools {nodejs "Your Node JS Installation Name"}
+    tools {nodejs "nodejs"}
+
     stages {
         stage('Build') { 
             steps {
